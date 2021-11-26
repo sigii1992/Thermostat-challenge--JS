@@ -10,6 +10,12 @@ class Thermostat {
     this.weather = weather;
   }
 
+  setCity = (city) => {
+    this.weather.fetchWeatherData(city, (weatherData) => {
+      this.temperature = weatherData.main.temp;
+    });
+  };
+
   getTemperature = () =>
     this.temperature === this.maximum
       ? `${this.temperature} (maximum reached)`
@@ -45,5 +51,10 @@ class Thermostat {
 
 module.exports = Thermostat;
 
-a = new Thermostat(weather);
-console.log(a);
+const thermostat = new Thermostat(weather);
+thermostat.setCity("Barcelona");
+// setTimeout(() => {
+//   console.log(thermostat.getTemperature());
+// }, 1000);
+
+console.log(thermostat.getTemperature());
