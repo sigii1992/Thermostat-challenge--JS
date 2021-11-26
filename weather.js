@@ -12,9 +12,9 @@ class Weather {
   };
 }
 
-// module.exports = Weather;
+(module.exports = Weather), apiKey;
 
-a = new Weather();
-a.fetchWeatherData("Nottingham", (a) => {
-  console.log(a);
-});
+// a = new Weather();
+// a.fetchWeatherData("Nottingham", (a) => {
+//   console.log(a);
+// });

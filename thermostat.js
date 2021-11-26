@@ -1,8 +1,13 @@
+const Weather = require("./weather");
+
+const weather = new Weather();
+
 class Thermostat {
-  constructor() {
+  constructor(weather) {
     this.temperature = 20;
     this.minimum = 10;
     this.maximum = 25;
+    this.weather = weather;
   }
 
   getTemperature = () =>
@@ -39,3 +44,6 @@ class Thermostat {
 }
 
 module.exports = Thermostat;
+
+a = new Thermostat(weather);
+console.log(a);
